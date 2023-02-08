@@ -1,28 +1,28 @@
-// This is a failed attempt to ensure only one label has the class "toggle-rating-label" at at time
-// Supposed to reset all label classes to "rating-label", and then the toggle-rating-label can be applied
-// However it appears that it just overrides the css class at the same time, causing the label to never have "toggle-rating-label" class
-// document.querySelector('.rating')
-//   .addEventListener("click", () => {
-//     console.log(document.querySelectorAll(`div label`))
-//     document.querySelectorAll(`div label`).forEach(el => {
-//       el.setAttribute('class','rating-label')
-//     })
-//   })
 
-// Adds css class to input label when clicked
-document.querySelectorAll('label')
+
+// Adds css class to active rating div
+document.querySelectorAll('.rating div')
   .forEach(el => {
     el.addEventListener("click", e => {
-      let rating = document.querySelector(`label[id="${e.target.id}"]`)
-      rating.classList.toggle("toggle-rating-label")
+      let prevRatingClicked = document.querySelector('.active-rating')
+      if(prevRatingClicked){
+        // console.log("prevRating is ", prevRatingClicked)
+        prevRatingClicked.classList.remove('active-rating')
+      }
+      let currentRatingClicked = document.querySelector(`div[id="${e.target.id}"]`)
+      currentRatingClicked.classList.add("active-rating")
+      // console.log("currentRating is ", currentRatingClicked)
     })
   })
 
-// saves rating to localStorage and redirects thankyou_card.html
-const submitRating = () => {
-  let rating = document.querySelector('input[name="rating"]:checked').value
-  console.log(rating)
-  localStorage.setItem('rating', rating)
-  window.location.href = './thankyou_card.html'
+// updates rating on thankyou card
+const updateRating = () => {
+  console.log("rating i")
+
+  let rating = document.querySelector('.active-rating').getAttribute('data-value')
+  console.log("rating is ",rating)
+  document.querySelector('#rating_value').innerHTML = rating;
+  document.querySelector('#rating_card').style.display = "none"
+  document.querySelector('#thankyou_card').style.display = "block"
   return false
 };

@@ -135,14 +135,7 @@ table {
 }
 
 
-/* .rating {
-    padding: 20px;
-    border-radius: 50%;
-    background-color: aqua;
-}
-.rating label {
-    transform: translate(50px);
-} */
+
 .screen {
     min-height: 100vh;
     /* background-color: hsl(216, 12%, 8%); */
@@ -152,7 +145,7 @@ table {
     align-items: center;
 }
 
-.container{
+.container {
     max-width: 440px;
     padding: 0px 20px;
     box-sizing: border-box;
@@ -176,16 +169,23 @@ table {
     /* max-width: 400px; */
     min-height: 400px;
     padding: 30px;
+    text-align: center;
     box-sizing: border-box;
     border-radius: 2rem;
 }
 
-.card-img {
+.card-icon {
     display: inline-block;
     padding: 1rem;
     margin: 5px 0px;
     border-radius: 50%;
     background-color: hsl(213, 19%, 18%);
+}
+.card-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }
 
 .card-body-center {
@@ -219,34 +219,36 @@ table {
     margin: 30px 0px;
 }
 
-.rating-label {
+.rating-div {
     font-family: Overpass;
     font-size: 1.1rem;
     font-weight: 700;
-    padding: 1rem 1.3rem 0.9rem 1.3rem;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    line-height: 3rem;
     border-radius: 50%;
     background-color: hsl(213, 19%, 18%);
     color: hsl(217, 12%, 53%);
 }
 
-input {
-    appearance: none;
-}
-
-.toggle-rating-label {
-    font-family: Overpass;
-    font-size: 1.1rem;
-    font-weight: 700;
-    padding: 1rem 1.3rem 0.9rem 1.3rem;
-    border-radius: 50%;
-    background-color: hsl(25, 97%, 53%);
-    color: hsl(0, 0%, 100%);
-}
-
-.rating label:hover {
+.rating-div:hover {
     background-color: hsl(0, 0%, 67%);
     color: hsl(0, 0%, 100%);
     cursor: pointer;
+}
+
+.active-rating {
+    font-family: Overpass;
+    font-size: 1.1rem;
+    font-weight: 700;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    line-height: 3rem;
+    border-radius: 50%;
+    background-color: hsl(25, 97%, 53%);
+    color: hsl(0, 0%, 100%);
 }
 
 .rating-btn {
@@ -274,16 +276,19 @@ input {
 }
 
 .msg {
+    display:inline-block;
     width: auto;
     height: 32px;
     padding: 0px 20px;
-    margin: 20px 0px; 
+    margin: 20px 0px;
     border-radius: 20px;
     line-height: 36px;
     background-color: hsl(213, 19%, 18%);
 }
 
 .msg p {
+    /* background-color: wheat; */
+    display: inline-block;
     font-family: Overpass;
     font-size: 15px;
     color: hsl(25, 97%, 43%);

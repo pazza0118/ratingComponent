@@ -13,30 +13,42 @@
 
 <body class="screen">
   <div class="container">
-    <div class="card">
-      <span class="card-img">
+
+    <!-- Rating Card -->
+    <div id="rating_card" class="card" style="display:block">
+      <span class="card-icon">
         <img src="images/icon-star.svg">
       </span>
       <h1 class="card-title">How did we do?</h1>
       <p class="card-text">Please let us know how we did with your support request. All feedback is appreciated
         to help us improve our offering!</p>
-      <form onsubmit="return submitRating(event)">
+      <div>
         <div class="rating">
-          <label id="rating_1" for="score_1" class="rating-label">1</label>
-          <input id="score_1" name="rating" type="radio" value="1">
-          <label id="rating_2" for="score_2" class="rating-label">2</label>
-          <input id="score_2" name="rating" type="radio" value="2">
-          <label id="rating_3" for="score_3" class="rating-label">3</label>
-          <input id="score_3" name="rating" type="radio" value="3">
-          <label id="rating_4" for="score_4" class="rating-label">4</label>
-          <input id="score_4" name="rating" type="radio" value="4">
-          <label id="rating_5" for="score_5" class="rating-label">5</label>
-          <input id="score_5" name="rating" type="radio" value="5">
+          <div id="rating_1" class="rating-div" data-value="1">1</div>
+          <div id="rating_2" class="rating-div" data-value="2">2</div>
+          <div id="rating_3" class="rating-div" data-value="3">3</div>
+          <div id="rating_4" class="rating-div" data-value="4">4</div>
+          <div id="rating_5" class="rating-div" data-value="5">5</div>
         </div>
         <div class="rating-btn">
-          <button>SUBMIT</button>
+          <button onclick="updateRating()">SUBMIT</button>
         </div>
-      </form>
+      </div>
+    </div>
+
+    <!-- Thankyou Card -->
+    <div id="thankyou_card" class="card-flex" style="display:none">
+      <div class="card-img">
+        <img src="./images/illustration-thank-you.svg">
+      </div>
+      <div class="msg">
+        <p>You selected <span id="rating_value"></span> out of 5</p>
+      </div>
+      <div class="card-body-center">
+        <h1 class="card-title">Thank you!</h1>
+        <p class="card-text">We appreciate you taking the time to give a rating. If you ever need more support,
+          don't hesitate to get in touch!</p>
+      </div>
     </div>
   </div>
   <script src="index.js"></script>
