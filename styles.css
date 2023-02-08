@@ -1,0 +1,290 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* .rating {
+    padding: 20px;
+    border-radius: 50%;
+    background-color: aqua;
+}
+.rating label {
+    transform: translate(50px);
+} */
+.screen {
+    min-height: 100vh;
+    /* background-color: hsl(216, 12%, 8%); */
+    background-color: hsl(216, 12%, 8%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    max-width: 440px;
+    padding: 0px 20px;
+    box-sizing: border-box;
+}
+
+.card {
+    background-color: hsl(213, 19%, 13%);
+    /* max-width: 400px; */
+    min-height: 400px;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 2rem;
+}
+
+.card-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(213, 19%, 13%);
+    /* max-width: 400px; */
+    min-height: 400px;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 2rem;
+}
+
+.card-img {
+    display: inline-block;
+    padding: 1rem;
+    margin: 5px 0px;
+    border-radius: 50%;
+    background-color: hsl(213, 19%, 18%);
+}
+
+.card-body-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.7rem;
+    font-family: Overpass;
+    font-weight: 700;
+    color: hsl(0, 0%, 100%);
+    margin: 1rem 0rem;
+}
+
+.card-text {
+    font-family: Overpass;
+    font-size: 15px;
+    line-height: 1.5rem;
+    color: hsl(217, 12%, 63%);
+    margin: 0rem 0rem;
+}
+
+
+.rating {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0px;
+}
+
+.rating-label {
+    font-family: Overpass;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 1rem 1.3rem 0.9rem 1.3rem;
+    border-radius: 50%;
+    background-color: hsl(213, 19%, 18%);
+    color: hsl(217, 12%, 53%);
+}
+
+input {
+    appearance: none;
+}
+
+.toggle-rating-label {
+    font-family: Overpass;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 1rem 1.3rem 0.9rem 1.3rem;
+    border-radius: 50%;
+    background-color: hsl(25, 97%, 53%);
+    color: hsl(0, 0%, 100%);
+}
+
+.rating label:hover {
+    background-color: hsl(0, 0%, 67%);
+    color: hsl(0, 0%, 100%);
+    cursor: pointer;
+}
+
+.rating-btn {
+    text-align: center;
+}
+
+.rating-btn button {
+    /* display: inline-block; */
+    font-family: Overpass;
+    font-size: 17px;
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(25, 97%, 53%);
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    letter-spacing: 2px;
+    border-radius: 23px;
+    border-width: 0;
+}
+
+.rating-btn button:hover {
+    color: hsl(25, 97%, 53%);
+    background-color: hsl(0, 0%, 100%);
+    cursor: pointer;
+}
+
+.msg {
+    width: auto;
+    height: 32px;
+    padding: 0px 20px;
+    margin: 20px 0px; 
+    border-radius: 20px;
+    line-height: 36px;
+    background-color: hsl(213, 19%, 18%);
+}
+
+.msg p {
+    font-family: Overpass;
+    font-size: 15px;
+    color: hsl(25, 97%, 43%);
+}
